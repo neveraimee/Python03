@@ -4,30 +4,30 @@ import sys
 
 def main() -> None:
     print("=== Inventory System Analysis ===")
-    inventory = {} #keys with a value
+    inventory = {}
     for arg in sys.argv[1:]:
         parts = arg.split(":")
-        if len(parts) != 2: #it should be item and quantity
+        if len(parts) != 2:
             print(f"Error - invalid parameter '{arg}'")
-            continue #to look at other parameters
+            continue
         name = parts[0] 
         quantity = parts[1]
-        if name in inventory: #preventing repeats
+        if name in inventory:
             print(f"Redundant item '{name}' - discarding")
             continue
         try:
-            inventory[name] = int(quantity) # convert quanity to int and store is sword[1]
+            inventory[name] = int(quantity)
         except ValueError as e:
             print(f"Quantity error for '{name}': as '{e}'") 
 
-    if len(inventory) == 0: #how to check if its empty?
+    if len(inventory) == 0:
         print("Inventory is empty!")
         return
     print(f"Got inventory: {inventory}")
-    print(f"Item list: {list(inventory.keys())}") #list dict key names
+    print(f"Item list: {list(inventory.keys())}")
     total = sum(inventory.values())
     print(f"Total quantity of the {len(inventory)} items: {total}")
-    for item in inventory.keys(): #i dont understand .keys()
+    for item in inventory.keys():
         percent = inventory[item] / total * 100
         print(f"Item {item} represents {round(percent, 1)}%")
     most_item = ""

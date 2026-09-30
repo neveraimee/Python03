@@ -2,16 +2,16 @@
 import sys
 
 def main() -> None:
-    scores = [] # creates an empty line
-    for arg in sys.argv[1:]: # for each arg in the list try the following:
+    scores = []
+    for arg in sys.argv[1:]:
         try:
-            scores.append(int(arg)) # try to add each arg to the list and convert to int
-        except ValueError: # if its not numeric 
-            print(f"Invalid parameter: '{arg}'") #invalid!
-    if len(scores) == 0: # if no params given
+            scores.append(int(arg))
+        except ValueError:
+            print(f"Invalid parameter: '{arg}'")
+    if len(scores) == 0:
         print("No scores provided. Usage:"
               " python3 ft_score_analytics.py <score1> <score2> ...")
-    else: # else print stats
+    else:
         print("=== Player Score Analytics ===")
         players = len(scores)
         total_score = sum(scores)

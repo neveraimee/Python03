@@ -15,8 +15,8 @@ achievements = [
 ]
 
 
-def get_player_achievements() -> set[str]: #explain a bit about sets 
-    achievement_list = random.sample(achievements, random.randint(12, 22))  #which part stops us from using the same thing twice?
+def get_player_achievements() -> set[str]:
+    achievement_list = random.sample(achievements, random.randint(12, 22))
     achievement_set = set(achievement_list)
     return achievement_set
 
