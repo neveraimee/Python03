@@ -10,7 +10,7 @@ def main() -> None:
         if len(parts) != 2:
             print(f"Error - invalid parameter '{arg}'")
             continue
-        name = parts[0] 
+        name = parts[0]
         quantity = parts[1]
         if name in inventory:
             print(f"Redundant item '{name}' - discarding")
@@ -18,7 +18,7 @@ def main() -> None:
         try:
             inventory[name] = int(quantity)
         except ValueError as e:
-            print(f"Quantity error for '{name}': as '{e}'") 
+            print(f"Quantity error for '{name}': as '{e}'")
 
     if len(inventory) == 0:
         print("Inventory is empty!")
@@ -32,7 +32,7 @@ def main() -> None:
         print(f"Item {item} represents {round(percent, 1)}%")
     most_item = ""
     most_quantity = 0
-    for item in inventory.keys():  
+    for item in inventory.keys():
         if inventory[item] > most_quantity:
             most_item = item
             most_quantity = inventory[item]

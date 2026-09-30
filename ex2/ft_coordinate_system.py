@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 import math
 
+
 def get_player_pos() -> tuple[float, float, float]:
     while True:
         value: str = ""
         try:
-            coords_given = input("Enter new coordinates as floats in format 'x,y,z': ")
+            coords_given = input("Enter new coordinates as floats in"
+                                 " format 'x,y,z': ")
             coord_list = coords_given.split(",")
 
             if len(coord_list) != 3:
@@ -43,7 +45,9 @@ def main() -> None:
     y2 = second_tuple[1]
     z2 = second_tuple[2]
     dis_coords = math.sqrt((x2-x1)**2 + (y2-y1)**2 + (z2-z1)**2)
-    print(f"Distance between the 2 sets of coordinates: {round(dis_coords, 4)}")
+    print(f"Distance between the 2 sets of coordinates:"
+          f"{round(dis_coords, 4)}")
+
 
 if __name__ == "__main__":
     main()

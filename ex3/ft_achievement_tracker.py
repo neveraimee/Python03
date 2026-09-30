@@ -3,13 +3,13 @@ import random
 
 achievements = [
     "First Follower", "Deal with the Devil", "Preacher of Truth",
-    "The First Death", "Death to Non-Believers","The Flock Grows", 
-    "Flock of Many", "Flock of All", "See No Evil","Speak No Evil", 
-    "Hear No Evil", "Think No Evil", "Do No Evil","Order", "Sate", 
-    "Cure","Peace", "Keeper of Secrets", "Leader of the Crusade",
+    "The First Death", "Death to Non-Believers", "The Flock Grows",
+    "Flock of Many", "Flock of All", "See No Evil", "Speak No Evil",
+    "Hear No Evil", "Think No Evil", "Do No Evil", "Order", "Sate",
+    "Cure", "Peace", "Keeper of Secrets", "Leader of the Crusade",
     "Bringer of Light", "Full Flock", "Full Deck", "Teach a Lamb to Fish",
-    "Crosser of Thresholds", "Sacrificial Beast", "Weigher of Souls", 
-    "Hoarder of Wealth", "Weapons of Plenty","Curses of Plenty", 
+    "Crosser of Thresholds", "Sacrificial Beast", "Weigher of Souls",
+    "Hoarder of Wealth", "Weapons of Plenty", "Curses of Plenty",
     "Devotion", "Transform", "Transmute", "Gospel", "Game of Chance",
     "Master of Chance", "Godhood"
 ]
@@ -19,6 +19,7 @@ def get_player_achievements() -> set[str]:
     achievement_list = random.sample(achievements, random.randint(12, 22))
     achievement_set = set(achievement_list)
     return achievement_set
+
 
 def main() -> None:
     print("=== Achievement Tracker System ===")
@@ -51,7 +52,6 @@ def main() -> None:
     print(f"Bob is missing: {full.difference(bob)}")
     print(f"Charlie is missing: {full.difference(charlie)}")
     print(f"Dylan is missing: {full.difference(dylan)}")
-
 
 
 if __name__ == "__main__":

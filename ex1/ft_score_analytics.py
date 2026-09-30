@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
+
 def main() -> None:
     scores = []
     for arg in sys.argv[1:]:
@@ -26,6 +27,7 @@ def main() -> None:
         print(f"High score: {highest}")
         print(f"Low score: {lowest}")
         print(f"Score range: {score_range}")
+
 
 if __name__ == "__main__":
     main()
