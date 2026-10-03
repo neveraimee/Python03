@@ -4,26 +4,24 @@ import math
 
 def get_player_pos() -> tuple[float, float, float]:
     while True:
-        value: str = ""
-        try:
-            coords_given = input("Enter new coordinates as floats in"
-                                 " format 'x,y,z': ")
-            coord_list = coords_given.split(",")
+        coords_given = input("Enter new coordinates as floats in"
+                             " format 'x,y,z': ")
+        coord_list = coords_given.split(",")
 
-            if len(coord_list) != 3:
-                print("Invalid syntax")
-                continue
+        if len(coord_list) != 3:
+            print("Invalid syntax")
+            continue
 
-            coords: list[float] = []
-            for value in coord_list:
+        coords: list[float] = []
+        for value in coord_list:
+            try:
                 coords.append(float(value))
+            except ValueError as e:
+                print(f"Error on parameter '{value}': {e}")
+                break
 
+        if len(coords) == 3:
             return (coords[0], coords[1], coords[2])
-
-        except ValueError as e:
-            print(f"Error on parameter '{value}': {e}")
-        except (KeyboardInterrupt, EOFError):
-            print("/nProgram interrupted")
 
 
 def main() -> None:
@@ -50,4 +48,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (KeyboardInterrupt, EOFError):
+        print("/nProgram interrupted")

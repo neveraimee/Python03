@@ -2,7 +2,7 @@
 import typing
 import random
 
-# these are lists
+
 names = ["alice", "bob", "charlie", "dylan"]
 actions = ["run", "eat", "sleep", "grab", "move", "climb", "swim", "use",
            "release"]
